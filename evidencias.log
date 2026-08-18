@@ -1,0 +1,79 @@
+Script started on 2026-08-18 08:46:26-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ [7mdate; whoami; pwd[27mdate; whoami; pwd
+[?2004lTue Aug 18 08:53:39 -03 2026
+henrique
+/home/henrique/hac2
+[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ cat > Makefile << 'EOF'
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c11 -g
+TARGET = processflow
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJ)
+        $(CC) $(CFLAGS) -o $@ $^
+
+[7m%.o: %.c[27m
+[7m        $(CC) $(CFLAGS) -c $< -o $@[27m
+
+[7mclean:[27m
+[7m        rm -f $(OBJ) $(TARGET)[27m
+
+[7m.PHONY: all clean[27m
+[7mEOF[27m
+
+[7mcat > .gitignore << 'EOF'[27m
+[7m*.o[27m
+[7mprocessflow[27m
+[7mEOF[27m
+
+[7mcat > README << 'EOF'[27m
+[7m# ProcessFlow[27m
+
+[7m## Arquivos[27m
+[7m(preencher conforme for criando)[27m[7m## Como compilar[27m[7mmake[27m[7m## Como executar[27m[7m./processflow [workflowFile][27m[7m## Sistema operacional testado[27m[7mUbuntu 24.04 (WSL2, arm64)[27m[7mEOF[27m[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A%.o: %.c
+        $(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+        rm -f $(OBJ) $(TARGET)
+
+.PHONY: all clean
+EOF
+
+cat > .gitignore << 'EOF'
+*.o
+processflow
+EOF
+
+cat > README << 'EOF'
+# ProcessFlow
+
+## Arquivos
+(preencher conforme for criando)## Como compilarmake## Como executar./processflow [workflowFile]## Sistema operacional testadoUbuntu 24.04 (WSL2, arm64)EOF
+[?2004l[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ [7mcat -A Makefile | grep '\$('[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat -A Makefile | grep '\$('
+[?2004lSRC = [01;31m[K$([m[Kwildcard *.c)$
+OBJ = [01;31m[K$([m[KSRC:.c=.o)$
+all: [01;31m[K$([m[KTARGET)$
+[01;31m[K$([m[KTARGET): [01;31m[K$([m[KOBJ)$
+^I[01;31m[K$([m[KCC) [01;31m[K$([m[KCFLAGS) -o $@ $^$
+^I[01;31m[K$([m[KCC) [01;31m[K$([m[KCFLAGS) -c $< -o $@$
+^Irm -f [01;31m[K$([m[KOBJ) [01;31m[K$([m[KTARGET)$
+[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ [7mgit add .[27m
+[7mgit commit -m "chore: skeleton do projeto (Makefile, .gitignore, README)"[27m[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit add .
+git commit -m "chore: skeleton do projeto (Makefile, .gitignore, README)"[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@i[1@n[1@i[1@c[1@i[1@a[1@n[1@d[1@o[C[1@ [1@i[1@m[1@p[1@l[1@e[1@m[1@e[1@n[1@t[1@a[1@c[1@a[1@o
+[?2004l[master (root-commit) e65312e] iniciando implementacao (Makefile, .gitignore, README)
+ 4 files changed, 33 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Makefile
+ create mode 100644 README
+ create mode 100644 evidencias.log
+[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ [7mgit remote add origin https://github.com/henriq-az/Implementacao1.git[27m
+[7mgit push -u origin main[27m[A]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ git remote add origin https://github.com/henriq-az/Implementacao1.git
+git push -u origin main
+[?2004lerror: src refspec main does not match any
+[31merror: failed to push some refs to 'https://github.com/henriq-az/Implementacao1.git'
+[m[?2004h]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ [7mgit remote add origin https://github.com/henriq-az/Implementacao1.git[27m
+[7mgit push -u origin main[27m[A]0;henrique@Lenovin: ~/hac2[01;32mhenrique@Lenovin[00m:[01;34m~/hac2[00m$ git remote add origin https://github.com/henriq-az/Implementacao1.git
+git p
