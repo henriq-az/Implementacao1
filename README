@@ -1,0 +1,13 @@
+# ProcessFlow
+
+## Arquivos
+(preencher conforme for criando)
+
+## Como compilar
+make
+
+## Como executar
+./processflow [workflowFile]
+
+## Sistema operacional testado
+Ubuntu 24.04 (WSL2, arm64)
