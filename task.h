@@ -8,7 +8,7 @@
 typedef struct {
     char nome[MAX_NOME];
     char *args[MAX_ARGS];
-    int argc;
+    int arg_num;
 } Task;
 
 Task *acharTask(char *nome);
