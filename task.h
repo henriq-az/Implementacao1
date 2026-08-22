@@ -9,6 +9,9 @@ typedef struct {
     char nome[MAX_NOME];
     char *args[MAX_ARGS];
     int arg_num;
+    int append;
+    char input_file[MAX_NOME];
+    char output_file[MAX_NOME];
 } Task;
 
 Task *acharTask(char *nome);
